@@ -1,0 +1,23 @@
+name: fabric_app
+description: Identify fabric fiber (cotton / polyester / silk) from a photo.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^1.0.7      # camera + gallery
+  tflite_flutter: ^0.12.1   # on-device inference
+  image: ^4.1.7             # decode + resize for preprocessing
+
+dev_dependencies:
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/labels.txt
+    - assets/fiber_classifier.tflite
