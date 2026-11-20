@@ -46,3 +46,9 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# research data/outputs (downloaded at runtime)
+research/**/nirsort_data/
+research/**/ftir_data/
+research/**/data/
+research/**/*.pt

@@ -1,0 +1,48 @@
+{
+  "fold_acc": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "fold_f1": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "classes": [
+    "non-silk",
+    "silk"
+  ],
+  "confusion_matrix": [
+    [
+      115,
+      0
+    ],
+    [
+      0,
+      59
+    ]
+  ],
+  "args": {
+    "data_dir": "micro",
+    "mode": "binary",
+    "extra_negatives": false,
+    "arch": "resnet18",
+    "epochs": 12,
+    "folds": 5,
+    "batch_size": 16,
+    "lr": 0.0003,
+    "img_size": 224,
+    "workers": 0,
+    "seed": 42,
+    "out": "C:/Users/Jagriti/AppData/Local/Claude-Data/claude_pzs8sxrjxfjjc/scratch-workspaces/2329eb9a-7bed-4b05-abd1-1a7109fc2480/48fbd6cc-f31b-4150-bcbe-2d60e065f839/scratch-2026-11-16-159fbb/fabric-classifier/research/microscope/outputs_binary",
+    "no_best_epoch": true,
+    "skip_cv": false,
+    "skip_final": false,
+    "predict": null
+  }
+}

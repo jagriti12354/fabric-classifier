@@ -1,5 +1,7 @@
 # Fiber ID — fabric fiber classifier app
 
+> **Project report:** see [REPORT.md](REPORT.md) — compares this app with a smartphone-microscope CNN, NIR spectroscopy (NIST NIR-SORT) and ATR-FTIR (silk proof of concept). Code for those experiments is in [`research/`](research/).
+
 A Flutter app that photographs a piece of fabric and predicts its fiber —
 **Cotton / Polyester / Silk** — entirely on-device, using a fine-tuned
 MobileNetV2 model exported to TensorFlow Lite.
