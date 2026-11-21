@@ -23,9 +23,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R = lambda *p: os.path.join(ROOT, *p)
 
 # ----------------------------------------------------------------- fill these
-NAME = "[Name of the Candidate]"
-ENTRY = "[Entry No.]"
-SUPERVISOR = "[Name of the Supervisor]"
+CANDIDATES = [("Jagriti Singh", "2023TT10927"), ("Anurag", "2023TT10764")]
+NAME = " and ".join(n for n, _ in CANDIDATES)
+ENTRY = " and ".join(e for _, e in CANDIDATES)
+SUPERVISOR = "Prof. Apurba Das"
 MONTH_YEAR = "November 2026"
 TITLE = "Low-Cost Identification of Silk, Cotton and Polyester Fabrics using Image-Based Deep Learning and Infrared Spectroscopy"
 
@@ -290,8 +291,9 @@ def build(args):
     # ---------------- title page
     W.p(TITLE, bold=True, align=C, size=20, after=24)
     W.p("TXD 401: Major Project Part I", bold=True, align=C, size=14, after=30)
-    W.p(NAME, bold=True, align=C, size=14, after=0)
-    W.p(ENTRY, bold=True, align=C, size=14, after=40)
+    for n, e in CANDIDATES:
+        W.p(f"{n} ({e})", bold=True, align=C, size=14, after=0)
+    W.p("", after=30)
     W.p("Under the Guidance of", align=C, size=14, after=0)
     W.p(SUPERVISOR, bold=True, align=C, size=14, after=30)
     logo = args.logo
@@ -307,7 +309,7 @@ def build(args):
     W.page_break()
     W.front_title("CERTIFICATE")
     W.p(f"This is to certify that this project report entitled “{TITLE}”, being submitted by "
-        f"{NAME}, Entry No. {ENTRY}, to the Department of Textile and Fibre Engineering, Indian "
+        f"{NAME}, Entry Nos. {ENTRY}, to the Department of Textile and Fibre Engineering, Indian "
         "Institute of Technology Delhi, for the award of the degree of Bachelor of Technology, is a "
         "record of bona fide work carried out under my guidance and supervision.")
     W.p("To the best of my knowledge, the results embodied in this project have not been submitted "
@@ -321,14 +323,14 @@ def build(args):
     # ---------------- acknowledgement
     W.page_break()
     W.front_title("ACKNOWLEDGEMENT")
-    W.p(f"I would like to express my sincere gratitude to my supervisor, {SUPERVISOR}, for the "
+    W.p(f"We would like to express our sincere gratitude to our supervisor, {SUPERVISOR}, for the "
         "guidance, encouragement and valuable suggestions provided throughout this project.")
-    W.p("I thank the Department of Textile and Fibre Engineering, IIT Delhi, for the facilities and "
-        "support extended to me. I also acknowledge the open-data efforts of the National Institute of "
+    W.p("We thank the Department of Textile and Fibre Engineering, IIT Delhi, for the facilities and "
+        "support extended to us. We also acknowledge the open-data efforts of the National Institute of "
         "Standards and Technology (NIR-SORT), King's College London and collaborators (ATR-FTIR textile "
         "fibre dataset), and the authors of the open microscope fabric image dataset, without which the "
         "spectroscopic and microscopic parts of this work would not have been possible.")
-    W.p("Finally, I thank my family and friends for their constant support.")
+    W.p("Finally, we thank our families and friends for their constant support.")
     for line in ["", "Signature(s) of Candidate(s)", f"({NAME})",
                  "Department of Textile and Fibre Engineering", "Indian Institute of Technology Delhi"]:
         W.p(line, align=WD_ALIGN_PARAGRAPH.RIGHT, after=0)
